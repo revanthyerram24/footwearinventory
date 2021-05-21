@@ -1,0 +1,51 @@
+<html>
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Revanths inventory</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+	<li><a href='/update' method="post">update product</a></li>
+      <li><a href='/delete'>delete stock</a></li>
+      <li><a href='/addproduct' method="post">add product</a></li>
+     
+    </ul>
+  </div>
+</nav>
+
+
+
+<table class="table table-hover" id='database' class='table table-hover'>
+	<tr>
+		<th>Product ID</th>
+		<th>Brand</th>
+		<th>Category</th>
+		<th>Product Name</th>
+		<th>Size</th>
+		<th>Quantity</th>
+
+		<th>Selling Price</th>
+	</tr>
+    <tr>
+        <% for(var i=0;i<data.length;i++){ %>
+            <th><%= data[i].id %></th>
+            <th><%= data[i].brand %></th>
+            <th><%= data[i].category %></th>
+            <th><%= data[i].productname %></th>
+            <th><%= data[i].size %></th>
+            <th><%= data[i].quantity %></th>
+            <th><%= data[i].sp %></th>
+        </tr>
+            <% }%>
+        
+</table>
+</body>
+</html>
